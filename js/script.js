@@ -78,10 +78,13 @@ let quotes = [
 
 
 function getRandomQuote (array){
-    let randomQuote = array[Math.floor(Math.random())*14].quote;
+    let randomQuote = array[Math.floor(Math.random()*14)].quote;
     console.log(randomQuote);
     return randomQuote;
 }
+
+// getRandomQuote(quotes);
+
 
 function printQuote (arr){
     let randomQuote = getRandomQuote(arr);
@@ -96,10 +99,5 @@ function printQuote (arr){
 }
 
 printQuote(quotes);
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
