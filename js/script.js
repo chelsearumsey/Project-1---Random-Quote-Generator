@@ -89,10 +89,13 @@ function printQuote (){
     let quoteProperties = '';
     //console.log(document.getElementById('quote-box').innerHTML);
     quoteProperties += `<p class="quote"> ${randomQuote.quote} </p>
-                        <p class="source"> ${randomQuote.source}
-                            <span class="citation"> ${randomQuote.citation} </span>
-                            <span class="year"> ${randomQuote.year} </span>
-                        </p>`;
+                        <p class="source"> ${randomQuote.source}</p>`;
+    if (randomQuote.citation===true){
+        quoteProperties += `<span class="citation"> ${randomQuote.citation} </span>`;}
+        
+    if (randomQuote.citation===true){
+        quoteProperties += `<span class="year"> ${randomQuote.year} </span>`;}
+                        
 
     document.getElementById('quote-box').innerHTML = quoteProperties;
 }
