@@ -1,4 +1,4 @@
- let quotes = [
+let quotes = [
    {quote: '"I don\'t want to talk to you no more, you empty-headed animal food trough wiper. I fart in your general direction. Your mother was a hamster and your father smelt of elderberries."', 
    citation: '\n- French Knight', 
    source: '<i>Monty Python and the Holy Grail</i>', 
@@ -58,10 +58,13 @@
    citation: '\n- Kermit the Frog', 
    source: '<i>The Muppet Movie</i>', 
    year: '1979'},
+
    {quote: '"You mean you\'ll put down your rock and I\'ll put down my sword, and we\'ll try and kill each other like civilized people?"', 
    citation: '\n- Westley', 
    source: '<i>The Princess Bride</i>', 
    year: '1987'},
+
+
    {quote: '"You’re such a sweet boy, letting an old woman pay you with meatballs!"', 
    citation: '\n- Rosie', 
    source: '<i>The Wedding Singer</i>', 
@@ -71,21 +74,28 @@
    citation: '\n- Sir Alexander Dane', 
    source: '<i>Galaxy Quest</i>', 
    year: '1999'}
- ];
+];
 
 
+function getRandomQuote (array){
+    let randomQuote = array[Math.floor(Math.random())*14].quote;
+    console.log(randomQuote);
+    return randomQuote;
+}
 
-/***
- * `getRandomQuote` function
-***/
+function printQuote (arr){
+    let randomQuote = getRandomQuote(arr);
+    let quoteProperties = '';
+    for (let i = 0; i < arr.length; i++) { 
+        quoteProperties += `<p class="quote"> ${arr[i].quote} </p>
+                            <p class="source"> ${arr[i].source}
+                                <span class="citation"> ${arr[i].citation} </span>
+                                <span class="year"> ${arr[i].year} </span>
+                            </p>`;}
+        document.getElementById('quote-box').innerHTML = quoteProperties;
+}
 
-
-
-/***
- * `printQuote` function
-***/
-
-
+printQuote(quotes);
 
 /***
  * click event listener for the print quote button
