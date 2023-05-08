@@ -99,8 +99,7 @@ function getRandomQuote (array){
         let y = Math.floor(Math.random() * 256);
         let z = Math.floor(Math.random() * 256);
         let bgColor = `rgb(${x},${y},${z})`;
-    console.log(bgColor);
-    
+        console.log(bgColor);
         document.body.style.background = bgColor;
         }
 
@@ -123,6 +122,5 @@ function printQuote (){
     document.getElementById('quote-box').innerHTML = quoteProperties;
 }
 
-
-
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+//Got some help on automating showing another quote on this site: https://stackoverflow.com/questions/60655266/failed-to-execute-addeventlistener-on-eventtarget
+document.getElementById('load-quote').addEventListener("click", printQuote(setInterval(printQuote, 20000)), false);
