@@ -76,34 +76,24 @@ quotes = [
    year: '1999'}
 ];
 
-
+//This function generates a random quote object from the quotes array
 function getRandomQuote (array){
     let randomQuoteObject = array[Math.floor(Math.random()*14)];
-    // console.log(randomQuoteObject);
     return randomQuoteObject;
 }
 
-
+//This function prints the random quote and it's properties to the browser
 function printQuote (){
     let randomQuote = getRandomQuote(quotes);
     let quoteProperties = '';
-    //console.log(document.getElementById('quote-box').innerHTML);
     quoteProperties += `<p class="quote"> ${randomQuote.quote} </p>
                         <p class="source"> ${randomQuote.source}`;
     if (randomQuote.citation){
         quoteProperties += `<span class="citation"> ${randomQuote.citation} </span>`;}
-        
     if (randomQuote.citation){
         quoteProperties += `<span class="year"> ${randomQuote.year} </span></p>`;}
-                        
-
     document.getElementById('quote-box').innerHTML = quoteProperties;
 }
 
-
-// printQuote(quotes);
-// printQuote(quotes);
-// printQuote(quotes);
-// printQuote(quotes);
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
