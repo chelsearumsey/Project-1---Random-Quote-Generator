@@ -104,8 +104,10 @@ function printQuote (){
                         <p class="source"> ${randomQuote.source}`;
     if (randomQuote.citation){
         quoteProperties += `<span class="citation"> ${randomQuote.citation} </span>`;}
-    if (randomQuote.citation){
-        quoteProperties += `<span class="year"> ${randomQuote.year} </span></p>`;}
+    if (randomQuote.year){
+        quoteProperties += `<span class="year"> ${randomQuote.year} </span>`;}
+    if (randomQuote.genre){
+        quoteProperties += `<span class="genre"> ${randomQuote.genre} </span></p>`;}
     document.getElementById('quote-box').innerHTML = quoteProperties;
 }
 
