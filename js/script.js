@@ -1,4 +1,4 @@
-quotes = [
+const quotes = [
     {quote: 'I don\'t want to talk to you no more, you empty-headed animal food trough wiper. I fart in your general direction. Your mother was a hamster and your father smelt of elderberries.', 
     citation: 'Monty Python and the Holy Grail', 
     source: 'French Knight', 
@@ -93,6 +93,18 @@ quotes = [
 //This function generates a random quote object from the quotes array
 function getRandomQuote (array){
     let randomQuoteObject = array[Math.floor(Math.random()*14)];
+    //Found this background color randomization function at source: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
+    function random_bg_color() {
+        let x = Math.floor(Math.random() * 256);
+        let y = Math.floor(Math.random() * 256);
+        let z = Math.floor(Math.random() * 256);
+        let bgColor = `rgb(${x},${y},${z})`;
+    console.log(bgColor);
+    
+        document.body.style.background = bgColor;
+        }
+
+    random_bg_color();
     return randomQuoteObject;
 }
 
@@ -100,16 +112,17 @@ function getRandomQuote (array){
 function printQuote (){
     let randomQuote = getRandomQuote(quotes);
     let quoteProperties = '';
-    quoteProperties += `<p class="quote"> ${randomQuote.quote} </p>
+    quoteProperties += `<p class="quote">${randomQuote.quote}</p>
                         <p class="source"> ${randomQuote.source}`;
     if (randomQuote.citation){
-        quoteProperties += `<span class="citation"> ${randomQuote.citation} </span>`;}
+        quoteProperties += `<span class="citation">${randomQuote.citation}</span>`;}
     if (randomQuote.year){
-        quoteProperties += `<span class="year"> ${randomQuote.year} </span>`;}
+        quoteProperties += `<span class="year">${randomQuote.year}</span>`;}
     if (randomQuote.genre){
-        quoteProperties += `<span class="genre"> ${randomQuote.genre} </span></p>`;}
+        quoteProperties += `<span class="genre">${randomQuote.genre}</span></p>`;}
     document.getElementById('quote-box').innerHTML = quoteProperties;
 }
+
 
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
