@@ -122,5 +122,6 @@ function printQuote (){
     document.getElementById('quote-box').innerHTML = quoteProperties;
 }
 
-//Got some help on automating showing another quote on this site: https://stackoverflow.com/questions/60655266/failed-to-execute-addeventlistener-on-eventtarget
-document.getElementById('load-quote').addEventListener("click", printQuote(setInterval(printQuote, 20000)), false);
+setInterval(printQuote, 10000);
+
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
