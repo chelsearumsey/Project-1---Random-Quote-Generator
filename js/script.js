@@ -92,7 +92,7 @@ const quotes = [
 
 //This function generates a random quote object from the quotes array
 function getRandomQuote (array){
-    let randomQuoteObject = array[Math.floor(Math.random()*14)];
+    let randomQuoteObject = array[Math.floor(Math.random()*15)];
     //Found this background color randomization function at source: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
     function random_bg_color() {
         let x = Math.floor(Math.random() * 256);
