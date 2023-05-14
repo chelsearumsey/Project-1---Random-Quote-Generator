@@ -119,7 +119,9 @@ function printQuote (){
     if (randomQuote.year){
         quoteProperties += `<span class="year">${randomQuote.year}</span>`;}
     if (randomQuote.genre){
-        quoteProperties += `<span class="genre">${randomQuote.genre}</span></p>`;}
+        quoteProperties += `<span class="genre">${randomQuote.genre}</span>`;}
+    quoteProperties += `</p>`
+    random_bg_color();
     document.getElementById('quote-box').innerHTML = quoteProperties;
 }
 
