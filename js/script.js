@@ -93,19 +93,20 @@ const quotes = [
 //This function generates a random quote object from the quotes array
 function getRandomQuote (array){
     let randomQuoteObject = array[Math.floor(Math.random()*15)];
-    //Found this background color randomization function at source: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
-    function random_bg_color() {
-        let x = Math.floor(Math.random() * 256);
-        let y = Math.floor(Math.random() * 256);
-        let z = Math.floor(Math.random() * 256);
-        let bgColor = `rgb(${x},${y},${z})`;
-        console.log(bgColor);
-        document.body.style.background = bgColor;
-        }
-
-    random_bg_color();
     return randomQuoteObject;
 }
+
+
+ //Found this background color randomization function at source: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
+ function random_bg_color() {
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let bgColor = `rgb(${x},${y},${z})`;
+    console.log(bgColor);
+    document.body.style.background = bgColor;
+    }
+
 
 //This function prints the random quote and it's properties to the browser
 function printQuote (){
